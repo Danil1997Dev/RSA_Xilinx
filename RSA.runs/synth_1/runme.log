@@ -1,0 +1,417 @@
+
+*** Running vivado
+    with args -log TOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
+
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source TOP.tcl -notrace
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1446.102 ; gain = 0.000
+Command: read_checkpoint -auto_incremental -incremental D:/XilinxFPGA/RSA/RSA.srcs/utils_1/imports/synth_1/TOP.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/XilinxFPGA/RSA/RSA.srcs/utils_1/imports/synth_1/TOP.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top TOP -part xc7z020clg400-1
+Starting synth_design
+WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
+d:/XilinxFPGA/RSA/RSA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+
+WARNING: [Vivado_Tcl 4-393] The 'Implementation' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
+d:/XilinxFPGA/RSA/RSA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+
+INFO: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
+* Current project part 'xc7z020clg400-1' and the part 'xc7vx485tffg1157-1' used to customize the IP 'clk_wiz_0' do not match.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5348
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1446.102 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'TOP' [D:/XilinxFPGA/RSA/TOP.v:3]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/XilinxFPGA/RSA/RSA.runs/synth_1/.Xil/Vivado-15464-DESKTOP-8IP3CL9/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [D:/XilinxFPGA/RSA/RSA.runs/synth_1/.Xil/Vivado-15464-DESKTOP-8IP3CL9/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'locked' of module 'clk_wiz_0' is unconnected for instance 'clk_d' [D:/XilinxFPGA/RSA/TOP.v:26]
+WARNING: [Synth 8-7023] instance 'clk_d' of module 'clk_wiz_0' has 4 connections declared, but only 3 given [D:/XilinxFPGA/RSA/TOP.v:26]
+INFO: [Synth 8-6157] synthesizing module 'RSA' [D:/XilinxFPGA/RSA/RSA.v:3]
+	Parameter WIDTH_DEG bound to: 8 - type: integer 
+	Parameter WIDTH_N bound to: 8 - type: integer 
+	Parameter WIDTH_MSG_I bound to: 8 - type: integer 
+	Parameter WIDTH_MSG_O bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'SW' [D:/XilinxFPGA/RSA/SW.sv:1]
+WARNING: [Synth 8-151] case item 2'b01 is unreachable [D:/XilinxFPGA/RSA/SW.sv:17]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/XilinxFPGA/RSA/SW.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'SW' (2#1) [D:/XilinxFPGA/RSA/SW.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'CD_DC' [D:/XilinxFPGA/RSA/CD_DC.v:3]
+	Parameter WIDTH_DEG bound to: 8 - type: integer 
+	Parameter WIDTH_N bound to: 8 - type: integer 
+	Parameter WIDTH_MSG_I bound to: 8 - type: integer 
+	Parameter WIDTH_MSG_O bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CD_DC' (3#1) [D:/XilinxFPGA/RSA/CD_DC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'RSA' (4#1) [D:/XilinxFPGA/RSA/RSA.v:3]
+WARNING: [Synth 8-3848] Net tx in module/entity TOP does not have driver. [D:/XilinxFPGA/RSA/TOP.v:15]
+WARNING: [Synth 8-3848] Net msg in module/entity TOP does not have driver. [D:/XilinxFPGA/RSA/TOP.v:19]
+WARNING: [Synth 8-3848] Net e in module/entity TOP does not have driver. [D:/XilinxFPGA/RSA/TOP.v:21]
+WARNING: [Synth 8-3848] Net d in module/entity TOP does not have driver. [D:/XilinxFPGA/RSA/TOP.v:22]
+WARNING: [Synth 8-3848] Net n in module/entity TOP does not have driver. [D:/XilinxFPGA/RSA/TOP.v:23]
+WARNING: [Synth 8-3848] Net eORd in module/entity TOP does not have driver. [D:/XilinxFPGA/RSA/TOP.v:24]
+WARNING: [Synth 8-3848] Net start in module/entity TOP does not have driver. [D:/XilinxFPGA/RSA/TOP.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'TOP' (5#1) [D:/XilinxFPGA/RSA/TOP.v:3]
+WARNING: [Synth 8-7129] Port tx in module TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx in module TOP is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1446.102 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1446.102 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1446.102 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1446.102 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_d'
+Finished Parsing XDC File [d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_d'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1469.188 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1469.188 ; gain = 0.000
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for clk_d. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'out_signal_reg' [D:/XilinxFPGA/RSA/SW.sv:18]
+WARNING: [Synth 8-327] inferring latch for variable 'step_reg' [D:/XilinxFPGA/RSA/CD_DC.v:64]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 2     
+	                8 Bit    Registers := 8     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Multipliers : 
+	               8x64  Multipliers := 2     
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mult0, operation Mode is: A*B.
+DSP Report: operator mult0 is absorbed into DSP mult0.
+DSP Report: operator mult0 is absorbed into DSP mult0.
+DSP Report: Generating DSP mult_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mult_reg is absorbed into DSP mult_reg.
+DSP Report: operator mult0 is absorbed into DSP mult_reg.
+DSP Report: operator mult0 is absorbed into DSP mult_reg.
+DSP Report: Generating DSP mult0, operation Mode is: A*B.
+DSP Report: operator mult0 is absorbed into DSP mult0.
+DSP Report: operator mult0 is absorbed into DSP mult0.
+DSP Report: Generating DSP mult_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mult_reg is absorbed into DSP mult_reg.
+DSP Report: operator mult0 is absorbed into DSP mult_reg.
+DSP Report: operator mult0 is absorbed into DSP mult_reg.
+DSP Report: Generating DSP mult0, operation Mode is: A*B.
+DSP Report: operator mult0 is absorbed into DSP mult0.
+DSP Report: operator mult0 is absorbed into DSP mult0.
+DSP Report: Generating DSP mult_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mult_reg is absorbed into DSP mult_reg.
+DSP Report: operator mult0 is absorbed into DSP mult_reg.
+DSP Report: operator mult0 is absorbed into DSP mult_reg.
+DSP Report: Generating DSP mult0, operation Mode is: A*B.
+DSP Report: operator mult0 is absorbed into DSP mult0.
+DSP Report: operator mult0 is absorbed into DSP mult0.
+DSP Report: Generating DSP mult_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mult_reg is absorbed into DSP mult_reg.
+DSP Report: operator mult0 is absorbed into DSP mult_reg.
+DSP Report: operator mult0 is absorbed into DSP mult_reg.
+WARNING: [Synth 8-7129] Port tx in module TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx in module TOP is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/sw_inst/out_signal_reg) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/step_reg[7]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/step_reg[6]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/step_reg[5]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/step_reg[4]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/step_reg[3]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/step_reg[2]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/step_reg[1]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/step_reg[0]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[47]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[46]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[45]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[44]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[43]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[42]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[41]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[40]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[39]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[38]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[37]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[36]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[35]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[34]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[33]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[32]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[31]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[30]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[29]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[28]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[27]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[26]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[25]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[24]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[23]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[22]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[21]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[20]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[19]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[18]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[17]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[16]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[15]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[14]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[13]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[12]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[11]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[10]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[9]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[8]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[7]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[6]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[5]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[4]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[3]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[2]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[1]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[0]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[47]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[46]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[45]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[44]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[43]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[42]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[41]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[40]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[39]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[38]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[37]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[36]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[35]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[34]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[33]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[32]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[31]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[30]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[29]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[28]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[27]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[26]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[25]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[24]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[23]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[22]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[21]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[20]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[19]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[18]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[17]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[16]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[15]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[14]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[13]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[12]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[11]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[10]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[9]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[8]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[7]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[6]__0) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (rsa_inst/cd_inst/mult_reg[5]__0) is unused and will be removed from module TOP.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|CD_DC       | A*B            | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|CD_DC       | (PCIN>>17)+A*B | 14     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|CD_DC       | A*B            | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|CD_DC       | (PCIN>>17)+A*B | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|CD_DC       | A*B            | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|CD_DC       | (PCIN>>17)+A*B | 14     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|CD_DC       | A*B            | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|CD_DC       | (PCIN>>17)+A*B | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |clk_wiz |     1|
+|2     |OBUFT   |     1|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1469.188 ; gain = 23.086
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 214 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1469.188 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1469.188 ; gain = 23.086
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1471.883 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1483.938 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 1b97394e
+INFO: [Common 17-83] Releasing license: Synthesis
+29 Infos, 121 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:48 . Memory (MB): peak = 1483.938 ; gain = 37.836
+INFO: [Common 17-1381] The checkpoint 'D:/XilinxFPGA/RSA/RSA.runs/synth_1/TOP.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Sep 24 18:07:44 2022...

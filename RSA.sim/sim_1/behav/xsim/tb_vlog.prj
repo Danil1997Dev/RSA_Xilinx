@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../RSA.gen/sources_1/ip/clk_wiz_0" \
+"../../../../CD_DC.v" \
+"../../../../RSA.v" \
+
+sv xil_defaultlib  --include "../../../../RSA.gen/sources_1/ip/clk_wiz_0" \
+"../../../../SW.sv" \
+
+verilog xil_defaultlib  --include "../../../../RSA.gen/sources_1/ip/clk_wiz_0" \
+"../../../../tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
