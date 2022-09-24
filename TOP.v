@@ -41,13 +41,13 @@ module TOP
 		  .eORd(eORd),
 		  .start_i(start),
 		  .msg_i(msg), 
-		  .e_i(e), 
-		  .d_i(d), 
-		  .n_i(n), 
+		  .e_i(7),//e 
+		  .d_i(13), //d
+		  .n_i(33), //n
 		  .msg_o(rsa_out), 
 		  .finish(finish)
 		 );
-  serial_receive #(.CLK_FRQ(CLK_FRQ)) rx1 (clk_div, rx, reset, msg);
-  serial_transmit #(.CLK_FRQ(CLK_FRQ)) tx1 (clk_div, finish,rsa_out, tx_a, tx, tx_d);
+   async_receiver #(.CLK_FRQ(CLK_FRQ)) rx (.clk(clk_div), .RxD(rx), .RxD_data_ready(start), .RxD_data(msg));
+   async_transmitter #(.CLK_FRQ(CLK_FRQ)) tx (.clk(clk_div), .TxD(tx), .TxD_start(finish), .TxD_data(rsa_out), .TxD_busy());
   
 endmodule 
