@@ -1,12 +1,12 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../RSA.gen/sources_1/ip/clk_wiz_0" \
+verilog xil_defaultlib  --include "../../../../RSA.gen/sources_1/ip/clk_wiz" \
 "../../../../CD_DC.v" \
 "../../../../RSA.v" \
 
-sv xil_defaultlib  --include "../../../../RSA.gen/sources_1/ip/clk_wiz_0" \
+sv xil_defaultlib  --include "../../../../RSA.gen/sources_1/ip/clk_wiz" \
 "../../../../SW.sv" \
 
-verilog xil_defaultlib  --include "../../../../RSA.gen/sources_1/ip/clk_wiz_0" \
+verilog xil_defaultlib  --include "../../../../RSA.gen/sources_1/ip/clk_wiz" \
 "../../../../tb.v" \
 
 # compile glbl module

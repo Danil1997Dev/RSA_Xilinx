@@ -39,55 +39,78 @@ module tb
 		  .finish(finish)
 		 );
  
- initial begin
-
-clk = 0;
-reset=0;
-eORd=1;
-start=0;
-@(posedge clk)
-@(posedge clk)
-@(posedge clk)
-@(posedge clk)
-@(posedge clk)
-msg = 8'd3;
-e = 8'd3; 
-d = 8'd7; 
-n = 8'd33;  
-start=1;
-@(posedge clk)
-start=0;
-#1000;
-msg = 8'd20;
-e = 8'd3; 
-d = 8'd7; 
-n = 8'd33;   
-start=1;
-@(posedge clk)
-start=0;
-#1000; 
-eORd=0;
-start=0;
-@(posedge clk)
-msg = 8'd14;
-e = 8'd3; 
-d = 8'd7; 
-n = 8'd33;  
-start=1;
-@(posedge clk)
-start=0;
-#1000;
-msg = 8'd6;
-e = 8'd3; 
-d = 8'd7; 
-n = 8'd33;   
-start=1;
-@(posedge clk)
-start=0;
-#1000; 
-#50 $stop;
-end
+ initial 
+   begin 
+     clk = 0;
+     reset=0;
+     eORd=1;
+     start=0;
+     
+     @(posedge clk)
+     @(posedge clk)
+     @(posedge clk)
+     @(posedge clk)
+     @(posedge clk)
+     
+     msg = 8'd3;
+     e = 8'd3; 
+     d = 8'd7; 
+     n = 8'd33;  
+     start=1;
+     
+     @(posedge clk)
+     
+     start=0;
+     
+     #1000;
+     @(posedge clk)
+     
+     msg = 8'd20;
+     e = 8'd3; 
+     d = 8'd7; 
+     n = 8'd33;   
+     start=1;
+     
+     @(posedge clk)
+     
+     start=0;
+     
+     #1000; 
+     @(posedge clk)
+     
+     eORd=0; 
+     
+     @(posedge clk)
+     
+     msg = 8'd14;
+     e = 8'd3; 
+     d = 8'd7; 
+     n = 8'd33;  
+     start=1;
+     
+     @(posedge clk)
+     
+     start=0;
+     
+     #1000;
+     @(posedge clk)
+     
+     start=1; 
+     msg = 8'd6;
+     e = 8'd3; 
+     d = 8'd7; 
+     n = 8'd33;    
+     
+     @(posedge clk)
+     
+     start=0;
+     
+     @(posedge clk)
+     
+     #1000; 
+     #50 $stop;
+  end
  
-always #5 clk = ~clk;
+  always #5 clk = ~clk;
 
 endmodule
