@@ -1,0 +1,142 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Mon Sep 26 21:33:37 2022
+| Host         : DESKTOP-8IP3CL9 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file TOP_methodology_drc_routed.rpt -pb TOP_methodology_drc_routed.pb -rpx TOP_methodology_drc_routed.rpx
+| Design       : TOP
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 21
++-----------+----------+-----------------------+------------+
+| Rule      | Severity | Description           | Violations |
++-----------+----------+-----------------------+------------+
+| SYNTH-10  | Warning  | Wide multiplier       | 4          |
+| TIMING-16 | Warning  | Large setup violation | 8          |
+| TIMING-20 | Warning  | Non-clocked latch     | 9          |
++-----------+----------+-----------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+SYNTH-10#1 Warning
+Wide multiplier  
+Detected multiplier at rsa_inst/dc_inst/mult0 of size 18x9, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#2 Warning
+Wide multiplier  
+Detected multiplier at rsa_inst/dc_inst/mult0__0 of size 18x9, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#3 Warning
+Wide multiplier  
+Detected multiplier at rsa_inst/dc_inst/mult_reg of size 14x9, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#4 Warning
+Wide multiplier  
+Detected multiplier at rsa_inst/dc_inst/mult_reg__0 of size 18x9, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -72.490 ns between rsa_inst/dc_inst/mult0_carry__0_i_4_psdsp/C (clocked by clk_out1_clk_wiz) and rsa_inst/dc_inst/out_reg[0]/D (clocked by clk_out1_clk_wiz). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -72.595 ns between rsa_inst/dc_inst/mult0_carry__0_i_4_psdsp/C (clocked by clk_out1_clk_wiz) and rsa_inst/dc_inst/out_reg[1]/D (clocked by clk_out1_clk_wiz). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -72.670 ns between rsa_inst/dc_inst/mult0_carry__0_i_4_psdsp/C (clocked by clk_out1_clk_wiz) and rsa_inst/dc_inst/out_reg[2]/D (clocked by clk_out1_clk_wiz). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -72.809 ns between rsa_inst/dc_inst/mult0_carry__0_i_4_psdsp/C (clocked by clk_out1_clk_wiz) and rsa_inst/dc_inst/out_reg[3]/D (clocked by clk_out1_clk_wiz). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -73.008 ns between rsa_inst/dc_inst/mult0_carry__0_i_4_psdsp/C (clocked by clk_out1_clk_wiz) and rsa_inst/dc_inst/out_reg[4]/D (clocked by clk_out1_clk_wiz). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -73.042 ns between rsa_inst/dc_inst/mult0_carry__0_i_4_psdsp/C (clocked by clk_out1_clk_wiz) and rsa_inst/dc_inst/out_reg[7]/D (clocked by clk_out1_clk_wiz). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -73.165 ns between rsa_inst/dc_inst/mult0_carry__0_i_4_psdsp/C (clocked by clk_out1_clk_wiz) and rsa_inst/dc_inst/out_reg[5]/D (clocked by clk_out1_clk_wiz). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -73.213 ns between rsa_inst/dc_inst/mult0_carry__0_i_4_psdsp/C (clocked by clk_out1_clk_wiz) and rsa_inst/dc_inst/out_reg[6]/D (clocked by clk_out1_clk_wiz). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch rsa_inst/dc_inst/step_reg[0] cannot be properly analyzed as its control pin rsa_inst/dc_inst/step_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch rsa_inst/dc_inst/step_reg[1] cannot be properly analyzed as its control pin rsa_inst/dc_inst/step_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch rsa_inst/dc_inst/step_reg[2] cannot be properly analyzed as its control pin rsa_inst/dc_inst/step_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch rsa_inst/dc_inst/step_reg[3] cannot be properly analyzed as its control pin rsa_inst/dc_inst/step_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch rsa_inst/dc_inst/step_reg[4] cannot be properly analyzed as its control pin rsa_inst/dc_inst/step_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch rsa_inst/dc_inst/step_reg[5] cannot be properly analyzed as its control pin rsa_inst/dc_inst/step_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch rsa_inst/dc_inst/step_reg[6] cannot be properly analyzed as its control pin rsa_inst/dc_inst/step_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch rsa_inst/dc_inst/step_reg[7] cannot be properly analyzed as its control pin rsa_inst/dc_inst/step_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch rsa_inst/sw_inst/out_signal_reg cannot be properly analyzed as its control pin rsa_inst/sw_inst/out_signal_reg/G is not reached by a timing clock
+Related violations: <none>
+
+

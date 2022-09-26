@@ -1,0 +1,91 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Mon Sep 26 21:32:48 2022
+| Host         : DESKTOP-8IP3CL9 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file TOP_control_sets_placed.rpt
+| Design       : TOP
+| Device       : xc7z020
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    13 |
+|    Minimum number of control sets                        |    13 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    38 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    13 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     4 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              34 |           11 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              74 |           25 |
+| Yes          | No                    | No                     |              40 |           12 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              94 |           39 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------------------+------------------------------------------------+------------------------+------------------+----------------+--------------+
+|               Clock Signal               |                  Enable Signal                 |    Set/Reset Signal    | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------------------+------------------------------------------------+------------------------+------------------+----------------+--------------+
+|  clk_d/inst/clk_out1                     | rx_inst/tickgen/OversamplingTick               |                        |                1 |              1 |         1.00 |
+|  rsa_inst/sw_inst/out_signal_reg_i_2_n_0 |                                                |                        |                1 |              1 |         1.00 |
+|  clk_d/inst/clk_out1                     |                                                | rsa_inst/dc_inst/I2    |                4 |              8 |         2.00 |
+|  clk_d/inst/clk_out1                     | rx_inst/tickgen/FSM_onehot_RxD_state_reg[2][0] |                        |                2 |              8 |         4.00 |
+|  clk_d/inst/clk_out1                     | tx_inst/tickgen/Acc_reg[16]_0[0]               |                        |                2 |              8 |         4.00 |
+|  rsa_inst/start_0                        |                                                |                        |                3 |              8 |         2.67 |
+|  clk_d/inst/clk_out1                     | rx_inst/tickgen/E[0]                           |                        |                3 |             11 |         3.67 |
+|  clk_d/inst/clk_out1                     | tx_inst/tickgen/E[0]                           |                        |                4 |             12 |         3.00 |
+|  clk_d/inst/clk_out1                     |                                                | tx_inst/Q[0]           |                5 |             16 |         3.20 |
+|  clk_d/inst/clk_out1                     |                                                | reset_IBUF             |                8 |             18 |         2.25 |
+|  clk_d/inst/clk_out1                     |                                                |                        |                7 |             25 |         3.57 |
+|  clk_d/inst/clk_out1                     |                                                | rsa_inst/sw_inst/clear |                8 |             32 |         4.00 |
+|  clk_d/inst/clk_out1                     | rsa_inst/dc_inst/CEP                           | rsa_inst/sw_inst/clear |               39 |             94 |         2.41 |
++------------------------------------------+------------------------------------------------+------------------------+------------------+----------------+--------------+
+
+

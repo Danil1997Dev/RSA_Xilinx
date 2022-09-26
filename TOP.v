@@ -25,7 +25,7 @@ module TOP
   wire [WIDTH_N-1:0]       n; 
   wire				         clk_div,finish,eORd,start;
   
-  clk_wiz_0 clk_d (.clk_in1(clk),.reset(reset),.clk_out1(clk_div));
+  clk_wiz clk_d (.clk_in1(clk),.reset(reset),.clk_out1(clk_div));
   //assign clk_div = clk;
   
   RSA #(
@@ -47,7 +47,7 @@ module TOP
 		  .msg_o(rsa_out), 
 		  .finish(finish)
 		 );
-   async_receiver #(.CLK_FRQ(CLK_FRQ)) rx (.clk(clk_div), .RxD(rx), .RxD_data_ready(start), .RxD_data(msg));
-   async_transmitter #(.CLK_FRQ(CLK_FRQ)) tx (.clk(clk_div), .TxD(tx), .TxD_start(finish), .TxD_data(rsa_out), .TxD_busy());
+   async_receiver #(.CLK_FRQ(CLK_FRQ)) rx_inst (.clk(clk_div), .RxD(rx), .RxD_data_ready(start), .RxD_data(msg));
+   async_transmitter #(.CLK_FRQ(CLK_FRQ)) tx_inst (.clk(clk_div), .TxD(tx), .TxD_start(finish), .TxD_data(rsa_out), .TxD_busy());
   
 endmodule 

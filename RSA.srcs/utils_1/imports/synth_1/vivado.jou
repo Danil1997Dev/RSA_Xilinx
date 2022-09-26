@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Sep 26 20:44:10 2022
+# Process ID: 4660
+# Current directory: D:/XilinxFPGA/RSA/RSA.srcs/utils_1/imports/synth_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2636 D:\XilinxFPGA\RSA\RSA.srcs\utils_1\imports\synth_1\TOP.dcp
+# Log file: D:/XilinxFPGA/RSA/RSA.srcs/utils_1/imports/synth_1/vivado.log
+# Journal file: D:/XilinxFPGA/RSA/RSA.srcs/utils_1/imports/synth_1\vivado.jou
+# Running On: DESKTOP-8IP3CL9, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 4, Host memory: 8483 MB
+#-----------------------------------------------------------
+start_gui
+open_checkpoint D:/XilinxFPGA/RSA/RSA.srcs/utils_1/imports/synth_1/TOP.dcp

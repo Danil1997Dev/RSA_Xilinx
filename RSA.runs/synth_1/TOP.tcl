@@ -71,11 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param chipscope.maxJobs 2
-set_param iopl.placeGlobalClockInstsInIOPlacer 0
-set_param iopl.placeRegionalClockInstsInIOPlacer 0
-set_param synth.incrementalSynthesisCache C:/Users/123/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-11532-DESKTOP-8IP3CL9/incrSyn
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param synth.incrementalSynthesisCache C:/Users/123/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-19092-DESKTOP-8IP3CL9/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -98,12 +94,13 @@ read_verilog -library xil_defaultlib -sv D:/XilinxFPGA/RSA/SW.sv
 read_verilog -library xil_defaultlib {
   D:/XilinxFPGA/RSA/CD_DC.v
   D:/XilinxFPGA/RSA/RSA.v
+  D:/XilinxFPGA/RSA/async.v
   D:/XilinxFPGA/RSA/TOP.v
 }
-read_ip -quiet d:/XilinxFPGA/RSA/RSA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet d:/XilinxFPGA/RSA/RSA.srcs/sources_1/ip/clk_wiz/clk_wiz.xci
+set_property used_in_implementation false [get_files -all d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz/clk_wiz_board.xdc]
+set_property used_in_implementation false [get_files -all d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz/clk_wiz.xdc]
+set_property used_in_implementation false [get_files -all d:/XilinxFPGA/RSA/RSA.gen/sources_1/ip/clk_wiz/clk_wiz_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -114,6 +111,9 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc D:/XilinxFPGA/RSA/RSA.srcs/constrs_1/new/TOP.xdc
+set_property used_in_implementation false [get_files D:/XilinxFPGA/RSA/RSA.srcs/constrs_1/new/TOP.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental D:/XilinxFPGA/RSA/RSA.srcs/utils_1/imports/synth_1/TOP.dcp
