@@ -18,6 +18,7 @@ module tb
   reg [WIDTH_DEG-1:0]     e=0;
   reg [WIDTH_DEG-1:0]     d=0;
   reg [WIDTH_N-1:0]       n=0;  
+  wire        finish;  
 
   RSA #(
         .WIDTH_DEG(WIDTH_DEG),
@@ -46,13 +47,55 @@ module tb
      eORd=1;
      start=0;
      
+     @(posedge clk);
+     @(posedge clk);
+     @(posedge clk);
+     @(posedge clk);
+     @(posedge clk);
+ 
+     msg = 8'd77; //M
+     e = 8'd13; 
+     d = 8'd37; 
+     n = 8'd187;  
+     start = 1;
+     @(posedge clk);
+     start = 0;
+  
+     wait(finish);
+     @(posedge clk);
+     @(posedge clk);
+     msg = 8'd73;// I
+     start = 1;
      @(posedge clk)
+     start = 0;
      @(posedge clk)
-     @(posedge clk)
-     @(posedge clk)
-     @(posedge clk)
+     start = 0;
      
-     msg = 8'd3;
+     wait(finish);
+     @(posedge clk);
+     @(posedge clk);
+     msg = 8'd82; //R
+     start = 1;
+     @(posedge clk)
+     start = 0;
+     
+     wait(finish);
+     @(posedge clk);
+     @(posedge clk);
+     msg = 8'd69;//E
+     start = 1;
+     @(posedge clk)
+     start = 0;
+     
+     wait(finish);
+     @(posedge clk);
+     @(posedge clk);
+     msg = 8'd65;//A
+     start = 1;
+     @(posedge clk)
+     start = 0;
+ 
+/*     msg = 8'd3;
      e = 8'd3; 
      d = 8'd7; 
      n = 8'd33;  
@@ -106,7 +149,7 @@ module tb
      start=0;
      
      @(posedge clk)
-     
+     */
      #1000; 
      #50 $stop;
   end

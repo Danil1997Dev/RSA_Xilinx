@@ -19,7 +19,7 @@ module CD_DC
    output reg                   down // сигнал окончания
   );
   
-  reg [WIDTH_MSG_I*WIDTH_DEG-1:0] mult,step; 
+  reg [WIDTH_MSG_I*(2**WIDTH_DEG)-1:0] mult,step; 
   integer i = 0;
 
   always @(posedge clk) 
